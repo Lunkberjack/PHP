@@ -9,8 +9,8 @@
             } else {
                 echo 'seleccione una cerveza';
             }
-            ?>
-            </p>
+        ?>
+        </p>
             
         <form action="" method="post">
             <select multiple name="cerveza[]">
