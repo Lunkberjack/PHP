@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.row {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5vw;
+}
+
+.underlined-grad {
+    background-image: linear-gradient(to right, #fc00ff 0%, #00dbde 51%, #fc00ff 100%);
+    background-size: 100% 0.8vw;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    text-decoration: none;
+    position: relative;
+    border-radius: 17%;
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #fc00ff 0%, #00dbde 51%, #fc00ff 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    font-size: 1.5vw;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+#login-block {
+    display: none;
+}
+
+#volver {
+    display: none;
+    right: 50px;
+    bottom: 50px;
+}
