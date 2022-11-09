@@ -2,6 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
 }
 
 .row {
@@ -13,6 +15,8 @@ body {
 
 h1 {
     font-size: 5vw;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 700;
 }
 
 .underlined-grad {
@@ -49,7 +53,7 @@ h1 {
     display: none;
 }
 
-#volver {
+.home {
     display: none;
     right: 50px;
     bottom: 50px;
