@@ -8,6 +8,8 @@ ini_set('session.gc_maxlifetime', 3600);
 ini_set('session.cookie_lifetime', 3600);
 // Definimos el nombre de sesión (arbitrario).
 // Estos cambios se pueden ver en los registros de phpmyadmin.
+// Hay un usuario creado antes de aplicar estos cambios con el 
+// nombre de sesión por defecto.
 ini_set('session.name', $_POST['user-registro']);
 
 // La sesión cambia cada vez que nos logueamos con un nuevo registro
