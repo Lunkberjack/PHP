@@ -1,4 +1,7 @@
  <?php /*
+Surgieron ciertos problemas a la hora de usarlo.
+Más info en login.php.
+
 class MySessionHandler implements SessionHandlerInterface {
     private $sessionId;
     private $savePath;

@@ -17,7 +17,7 @@ if (!empty($_POST['user-login']) && !empty($_POST['pass-login'])) {
     // Lo que pasemos en 'user-login' se almacenará en :nombre en la consulta.
     $stmt->bindParam(":nombre", $_POST['user-login']);
     $stmt->execute();
-    // Obtenemos un array asociativo al ejecutar.
+    // TIPO DATO: obtenemos un array asociativo al ejecutar.
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Si ha encontrado un resultado donde la cuenta almacenada tenga las mismas
