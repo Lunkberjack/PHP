@@ -7,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Eczar:wght@400;700&family=Quicksand:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Error de registro</title>
+    <title>Sesión cerrada</title>
 </head>
 
 <body>
@@ -25,13 +23,15 @@
                 <a href="index.html">Volver</a>
             </div>
             <div id="texto-bienvenida" class="row justify-content-center">
-                <div class="alert alert-danger text-center mt-5 w-50 ">
-                    No ha sido posible crear la cuenta.
+                <div class="alert alert-success text-center mt-5 w-50 ">
+                    Se ha cerrado la sesión.
                     <br>
-                    Tu contraseña no coincide, o el nombre de usuario no está disponible.
+                    Esperamos verte pronto. <!-- <?php // echo $_SESSION['username'];?> 
+                    Si ahora intentamos acceder al nombre de usuario de la sesión, aparecerá
+                    un error: comprobamos así que ya no está asignado. -->
                 </div>
                 <div class="col-12">
-                    <h1 class="text-right underlined-grad mb-5">Ha ocurrido un error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+                    <h1 class="text-right underlined-grad">Sesión cerrada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
                 </div>
             </div>
         </div>

@@ -7,35 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Eczar:wght@400;700&family=Quicksand:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Error de registro</title>
+    <title>It's signin' up time</title>
 </head>
 
 <body>
-    <main>
-        <div class="container-fluid">
-            <div class="volverin">
-                <a href="index.html">Volver</a>
-            </div>
-            <div id="texto-bienvenida" class="row justify-content-center">
-                <div class="alert alert-danger text-center mt-5 w-50 ">
-                    No ha sido posible crear la cuenta.
+    <div class="container-fluid">
+        <div class="volverin">
+            <a href="index.html">Volver</a>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <form class="text-center d-flex flex-column mr-5" id="form-registro" action="registro.php"
+                    method="POST">
+                    <label for="user-registro">Usuario:</label>
+                    <input class="text-center" type="text" name="user-registro" required>
                     <br>
-                    Tu contraseña no coincide, o el nombre de usuario no está disponible.
-                </div>
-                <div class="col-12">
-                    <h1 class="text-right underlined-grad mb-5">Ha ocurrido un error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+                    <label class="pt-3" for="pass-registro">Contraseña:</label>
+                    <input class="text-center" type="password" name="pass-registro" required>
+                    <br>
+                    <label class="pt-3" for="pass-confirmar">Confirma la contraseña:</label>
+                    <input class="text-center" type="password" name="pass-confirmar" required>
+                    <button class="btn btn-outline-primary mt-3" type="submit" form="form-registro"
+                        value="submit">Submit</button>
+                </form>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5">
+                <h1 class="text-left">Crea una<br>nueva <span class="underlined-grad">cuenta</span></h1>
+                <div class="home volverin position-fixed">
+                    <a href="index.html" class="volverin">Volver</button>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

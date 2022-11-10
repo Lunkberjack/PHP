@@ -5,18 +5,16 @@ body {
     font-weight: 400;
     font-size: 24px;
 }
-
-.row {
-    min-height: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
 h1 {
     font-size: 5vw;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 700;
+}
+
+.row {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .underlined-grad {
@@ -49,12 +47,13 @@ h1 {
     text-decoration: none;
 }
 
-#login-block {
-    display: none;
+
+#registro-block {
+    display:none;
 }
 
-.home {
-    display: none;
-    right: 50px;
+.volverin {
+    position: fixed;
     bottom: 50px;
-}
+    right: 50px;
+ }
