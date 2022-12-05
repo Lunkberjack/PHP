@@ -53,6 +53,10 @@
 
     <main>
         <div class="container-fluid">
+        <div class="volverin d-flex flex-column text-right">
+                <a href="index.php">Volver</a>
+                <a href="clientes.php">Paginación</a>
+            </div>
             <div id="texto-bienvenida" class="row">
                 <div class="col-6">
                     <h1 class="text-right">Inicia sesión<br>o <span class="underlined-grad">regístrate</span></h1>
