@@ -16,7 +16,7 @@
 </head>
 <header>
     <nav class="navbar fixed-top navbar-light bg-light">
-        <a class="navbar-brand" href="editarUsuario.php">
+        <a class="navbar-brand" href="index.php">
             <img src="logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
         </a>
         <span class="navbar-brand">
@@ -46,7 +46,7 @@
             }
             ?>
             <img class="perfil rounded-circle" alt="<?php printf($imagen) ?>" src="
-                <?php printf("subidos/" . $imagen) ?>" style="max-width:60px;" />
+                <?php printf("subidos/" . $imagen) ?>" style="width:60px;height:60px;" />
         </span>
     </nav>
 </header>

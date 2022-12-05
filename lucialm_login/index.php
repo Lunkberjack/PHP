@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav class="navbar fixed-top navbar-light bg-light">
-            <a class="navbar-brand" href="editarUsuario.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
             </a>
             <span class="navbar-brand">
