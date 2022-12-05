@@ -12,7 +12,7 @@ if (!empty($_POST['user-cambio']) && !empty($_POST['pass-cambio']) && !empty($_P
         header("Location: error-cambio.html");
 
         // Si las dos contraseñas coinciden:
-    } elseif ($_POST['pass-cambio'] == $_POST['pass-cambio2']) {
+    } elseif ($_POST['pass-cambio'] === $_POST['pass-cambio2']) {
         $sql = "UPDATE usuario SET nombre = :nuevoNombre WHERE nombre = :nombre";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nombre', $_COOKIE['NombreUsuario']);
@@ -23,8 +23,10 @@ if (!empty($_POST['user-cambio']) && !empty($_POST['pass-cambio']) && !empty($_P
         $cifrada = password_hash($_POST['pass-cambio'], PASSWORD_BCRYPT);
         // La pasamos a la consulta una vez cifrada.
         $sql = "UPDATE usuario SET pass = :nuevaPass WHERE nombre = :nombre";
+        // Corregido un error que no modificaba la contraseña por falta de esta línea.
+        $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nuevaPass', $cifrada);
-        $stmt->bindParam(':nombre', $_POST['user-cambio']);
+        $stmt->bindParam(':nombre', $_COOKIE['NombreUsuario']);
         $stmt->execute();
 
         header("Location: exito-cambio.html");

@@ -20,10 +20,33 @@
                 <img src="logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
             </a>
             <span class="navbar-brand">
-                <?php echo ($_COOKIE["NombreUsuario"]); ?>
+                <a id="enlace-index" href="editarUsuario.php">
+                    <?php
+                    if (!empty($_COOKIE['NombreUsuario'])) {
+                        echo ($_COOKIE['NombreUsuario']);
+                    } else {
+                    ?>
+                        <script>
+                            // Si no hay usuario logueado, el enlace redirige al inicio de sesión.
+                            const enlaceIndex = document.getElementById('enlace-index');
+                            enlaceIndex.setAttribute('href', 'login-hub.html');
+                        </script>
+                    <?php
+                        echo ("Inicia sesión");
+                    }
+                    ?>
+                </a>
                 <!--POR FIN-->
-                <img class="perfil rounded-circle" alt="<?php $_COOKIE['NombreImagenPerfil'] ?>" src="
-                <?php printf("subidos/" . $_COOKIE['NombreImagenPerfil']) ?>" style="width:60px;height:60px" />
+                <?php
+                $imagen;
+                if (!empty($_COOKIE['NombreImagenPerfil'])) {
+                    $imagen = $_COOKIE['NombreImagenPerfil'];
+                } else {
+                    $imagen = "default.jpg";
+                }
+                ?>
+                <img class="perfil rounded-circle" alt="<?php printf($imagen) ?>" src="
+                <?php printf("subidos/" . $imagen) ?>" style="max-width:60px;" />
             </span>
         </nav>
     </header>
@@ -44,7 +67,7 @@
                         <label for="user-cambio">Nombre de usuario:</label>
                         <input class="text-center" type="text" name="user-cambio" required value="
                             <?php
-                            // El nombre de usuario actual.
+                            // Se muestra el nombre de usuario actual.
                             echo ($_COOKIE["NombreUsuario"]);
                             ?>
                         ">
@@ -104,7 +127,7 @@
                         if (isset($filename)) {
                             setcookie('NombreImagenPerfil', $filename, time() + 3600);
                             // Se recarga la página y la imagen de perfil se actualiza sola.
-                            header('Location: '.$_SERVER['PHP_SELF']);
+                            header('Location: ' . $_SERVER['PHP_SELF']);
                             $carpeta = "subidos/";
                             echo ("<img src=" . $carpeta . $filename . " alt='Tu imagen de perfil' style='max-width:60%; />" . "<br /><br />");
                         }
