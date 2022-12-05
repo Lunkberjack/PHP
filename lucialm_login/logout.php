@@ -17,3 +17,4 @@
 
     // Redirige a la página de cierre de sesión exitosa.
     header("Location: logout-hub.php");
+?>

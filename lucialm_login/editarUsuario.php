@@ -56,6 +56,7 @@
             <div class="volverin d-flex flex-column text-right">
                 <a href="index.php">Volver</a>
                 <a href="logout.php">Cerrar sesión</a>
+                <a class="text-danger" href="eliminarCuenta.php">Eliminar cuenta</a>
             </div>
             <div id="texto-bienvenida" class="row">
                 <div class="col-5">
