@@ -25,7 +25,18 @@ if (!empty($_POST['user-login']) && !empty($_POST['pass-login'])) {
     if (count($result) > 0 && password_verify($_POST['pass-login'], $result['pass'])) {
         // Guardamos el nombre de usuario de la sesión en una variable de sesión PHP.
         $_SESSION['username'] = $_POST['user-login'];
-        // Redirigimos a una nueva página (bienvenida).
+        // Y en una cookie.
+        setcookie('NombreUsuario', $_POST['user-login'],  time() + 3600);
+        // Buscamos si tiene foto.
+        $stmt = $pdo->prepare("SELECT * FROM imagen WHERE nombre_usuario = :nombre");
+
+        $stmt->bindParam(":nombre",  $_POST['user-login']);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $substrings = explode("\"", $result['nombre']);
+            setcookie("NombreImagenPerfil", $substrings[0], time() + 3600);
+
         header("Location: home.php");
     } else {
         // Algo ha salido mal con los datos. Redirigimos a pág de error.

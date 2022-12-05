@@ -20,7 +20,7 @@
     <main>
         <div class="container-fluid">
             <div class="volverin">
-                <a href="index.html">Volver</a>
+                <a href="index.php">Volver</a>
             </div>
             <div id="texto-bienvenida" class="row justify-content-center">
                 <div class="alert alert-success text-center mt-5 w-50 ">

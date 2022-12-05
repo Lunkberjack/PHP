@@ -15,24 +15,54 @@
     <title>Bienvenido</title>
 </head>
 
+<header>
+    <nav class="navbar fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="editarUsuario.php">
+            <img src="logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
+        </a>
+        <span class="navbar-brand">
+            <?php echo ($_COOKIE["NombreUsuario"]); ?>
+            <!--POR FIN-->
+            <img class="perfil rounded-circle" alt="<?php $_COOKIE['NombreImagenPerfil'] ?>" src="
+                <?php printf("subidos/" . $_COOKIE['NombreImagenPerfil']) ?>" style="max-width:60px;" />
+        </span>
+    </nav>
+</header>
+
 <body>
     <?php
-        session_start();
+    session_start();
     ?>
+    <header>
+        <nav class="navbar fixed-top navbar-light bg-light">
+            <a class="navbar-brand" href="index.php">
+                <img src="logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
+            </a>
+            <a class="navbar-brand" href="editarUsuario.php">
+                <?php
+                if (!empty($_COOKIE['NombreUsuario'])) {
+                    echo ($_COOKIE['NombreUsuario']);
+                }
+                ?>
+            </a>
+            </span>
+        </nav>
+    </header>
+
     <main>
         <div class="container-fluid">
-        <div class="volverin d-flex flex-column text-right">
-            <a href="index.html">Volver</a>
-            <a href="logout.php">Cerrar sesión</a>
-        </div>
+            <div class="volverin d-flex flex-column text-right">
+                <a href="index.php">Volver</a>
+                <a href="logout.php">Cerrar sesión</a>
+            </div>
             <div id="texto-bienvenida" class="row">
                 <div class="col-12">
                     <!-- Saluda personalmente al usuario logueado haciendo uso de variables de sesión -->
-                    <h1 class="text-right underlined-grad">Bienvenid@ de nuevo, 
+                    <h1 class="text-right underlined-grad">Bienvenid@ de nuevo,
                         <?php
-                            echo $_SESSION['username'];
-                        ?>  
-                    &nbsp;&nbsp;</h1>
+                        echo $_SESSION['username'];
+                        ?>
+                        &nbsp;&nbsp;</h1>
                 </div>
             </div>
         </div>

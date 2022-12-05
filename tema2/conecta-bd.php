@@ -43,6 +43,6 @@ if($result3 = $mysqli_poo->query("SELECT id, nombre, apellidos FROM usuario")) {
 $mysqli = mysqli_connect('localhost','root','','test');
 if($result4 = mysqli_query($mysqli,"SELECT * FROM usuarios")){
    while($user3 = mysqli_fetch_object($result4,'usuario')){
-       echo $use3r->info()."<br>";
+       echo $user3->info()."<br>";
    }
 }
