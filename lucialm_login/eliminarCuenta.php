@@ -1,12 +1,13 @@
 <?php
 require 'connection.php';
-// Borramos la entrada del usuario por completo.
-$stmt = $pdo->prepare("DELETE FROM usuario WHERE nombre = :nombre");
+
+// Primero borramos la foto de perfil para que no haya dependencia.
+$stmt = $pdo->prepare("DELETE FROM imagen WHERE nombre_usuario = :nombre");
 $stmt->bindParam(":nombre", $_COOKIE['NombreUsuario']);
 $stmt->execute();
 
-// Nos aseguramos de que su foto de perfil quede también borrada.
-$stmt = $pdo->prepare("DELETE FROM imagen WHERE nombre_usuario = :nombre");
+// Borramos la entrada del usuario por completo.
+$stmt = $pdo->prepare("DELETE FROM usuario WHERE nombre = :nombre");
 $stmt->bindParam(":nombre", $_COOKIE['NombreUsuario']);
 $stmt->execute();
 

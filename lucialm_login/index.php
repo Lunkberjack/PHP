@@ -46,7 +46,7 @@
                 }
                 ?>
                 <img class="perfil rounded-circle" alt="<?php printf($imagen) ?>" src="
-                <?php printf("subidos/" . $imagen) ?>" style="max-width:60px;" />
+                <?php printf("subidos/" . $imagen) ?>" style="width:60px;height:60px;" />
             </span>
         </nav>
     </header>
@@ -95,21 +95,6 @@
             document.location.href = "registro-hub.html";
         })
 
-        /* function volverLogin() {
-            document.getElementById("texto-bienvenida").style.display = 'flex'
-            document.getElementById("login-block").style.display = 'none'
-            document.getElementById("volver").style.display = 'none'
-            document.getElementById("registro-block").style.display = 'none'
-        }
-        document.getElementById("btn-volver").addEventListener("click", volverLogin)
-
-        function volverRegistro() {
-            document.getElementById("texto-bienvenida").style.display = 'flex'
-            document.getElementById("login-block").style.display = 'none'
-            document.getElementById("volver-registro").style.display = 'none'
-            document.getElementById("registro-block").style.display = 'none'
-        }
-        document.getElementById("btn-volver-registro").addEventListener("click", volverRegistro) */
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

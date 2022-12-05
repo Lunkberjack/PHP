@@ -46,7 +46,7 @@
                 }
                 ?>
                 <img class="perfil rounded-circle" alt="<?php printf($imagen) ?>" src="
-                <?php printf("subidos/" . $imagen) ?>" style="max-width:60px;" />
+                <?php printf("subidos/" . $imagen) ?>" style="width:60px;height:60px;" />
             </span>
         </nav>
     </header>
