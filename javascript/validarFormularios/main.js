@@ -1,21 +1,33 @@
+// LucíaLM - 2 DAM
+// Inputs
+const nombre = document.getElementById('nombre')
+const pass = document.getElementById('pass')
+const email = document.getElementById('email')
+const edad = document.getElementById('edad')
+const telefono = document.getElementById('telefono')
+
+// Spans de error
 const errorNombre = document.getElementById('error-nombre')
 const errorPass = document.getElementById('error-pass')
 const errorEmail = document.getElementById('error-email')
 const errorEdad = document.getElementById('error-edad')
 const errorTelefono = document.getElementById('error-telefono')
-const btnReset = document.getElementById('btn-reset')
 
+// Botones
+const btnReset = document.getElementById('btn-reset')
+const btnEnviar = document.getElementById('btn-enviar')
+
+// Constantes
 const LONGITUD_PASS = 8 // Longitud mínima de contraseña
 // No es mía, es un estándar de validación de emails encontrado en
 // https://www.w3resource.com/javascript/form/email-validation.php
 const REGEX_EMAIL = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 const TEL_DIGS = 9 // Dígitos en un # de teléfono
+
 /**
  * Valida el nombre: es obligatorio.
  */
 function validarNombre() {
-    let nombre = document.getElementById('nombre')
-
     // Si está vacío, en el span aparece un
     // mensaje personalizado
     if (nombre.value.length == 0) {
@@ -31,8 +43,6 @@ function validarNombre() {
  * Valida la contraseña: es obligatoria y debe tener 8+ caracteres.
  */
 function validarPass() {
-    let pass = document.getElementById('pass')
-
     // Mensajes que aparecerán en el span según
     // las condiciones que se cumplan o no
     if (pass.value.length < 8 && pass.value.length > 0) {
@@ -52,8 +62,6 @@ function validarPass() {
  * especificado en la expresión regular anterior
  */
 function validarEmail() {
-    let email = document.getElementById('email')
-
     if (email.value.length == 0) {
         errorEmail.innerHTML = 'El email es obligatorio'
         cambiarColorBorde(email, 'rojo')
@@ -72,8 +80,6 @@ function validarEmail() {
  * el valor manualmente
  */
 function validarEdad() {
-    let edad = document.getElementById('edad')
-
     if (!Number.isInteger(parseInt(edad.value))) {
         errorEdad.innerHTML = 'Introduce solo números'
         cambiarColorBorde(edad, 'rojo')
@@ -90,8 +96,7 @@ function validarEdad() {
  * Valida un teléfono de la longitud especificada (debe ser un número)
  */
 function validarTelefono() {
-    let telefono = document.getElementById('telefono')
-    if(Number.isInteger(parseInt(telefono.value)) && telefono.value.length == TEL_DIGS) {
+    if (Number.isInteger(parseInt(telefono.value)) && telefono.value.length == TEL_DIGS) {
         errorTelefono.innerHTML = ''
         cambiarColorBorde(telefono)
     } else {
@@ -119,4 +124,25 @@ function cambiarColorBorde(cosa, color) {
     }
 }
 
-// TODO: botón de reseteo, botón de envío
+/**
+ * Botón de reseteo: borra la información de todos los campos.
+ */
+function resetear() {
+    nombre.value = ''
+    pass.value = ''
+    email.value = ''
+    edad.value = ''
+    telefono.value = ''
+    // También borra cualquier mensaje de error anterior
+    errorNombre.innerHTML = ''
+    errorPass.innerHTML = ''
+    errorEmail.innerHTML = ''
+    errorEdad.innerHTML = ''
+    errorTelefono.innerHTML = ''
+};
+btnReset.addEventListener("click", resetear);
+
+// TODO: hacer que el borde sea verde y aparezca un icono con un tick
+//       cuando los datos tengan el formato correcto para enviar
+//      -> añadir case: 'verde'
+//      -> añadir icono font-awesome

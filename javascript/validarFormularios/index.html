@@ -1,5 +1,8 @@
+<!--LucíaLM - 2 DAM-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +10,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Validación formulario</title>
 </head>
+
 <body>
     <div class="container">
         <form>
-            <h1>Login</h1>
+            <h1>Regístrate</h1>
             <div class="input-group">
                 <label for="nombre">Nombre: </label>
                 <input id="nombre" type="text" placeholder="Tu nombre..." name="nombre" onkeyup="validarNombre()">
@@ -37,14 +41,19 @@
 
             <div class="input-group">
                 <label for="telefono">Teléfono: </label>
-                <input id="telefono" type="tel" placeholder="Introduce tu teléfono" name="telefono" onkeyup="validarTelefono()">
+                <input id="telefono" type="tel" placeholder="Introduce tu teléfono" name="telefono"
+                    onkeyup="validarTelefono()">
                 <span id="error-telefono"></span>
             </div>
-
-            <button>Resetear</button>
-            <button id="btn-reset" type="submit">Enviar</button>
+            <!--Los botones en Javascript tienen asociado un evento submit (enviar).
+            Para evitar que el botón de reseteo envíe el formulario, le damos
+            el tipo button en lugar de submit -->
+            <button id="btn-reset" type="button" value="Resetear">Resetear</button>
+            <button id="btn-enviar" type="submit">Enviar</button>
         </form>
+
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>

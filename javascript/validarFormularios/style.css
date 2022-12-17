@@ -1,3 +1,5 @@
+/* LucíaLM - 2 DAM */
+
 * {
     margin: 0;
     padding: 0;
@@ -47,10 +49,11 @@ h1 {
     border: 0;
     outline: 0;
     padding: 10px 0;
-    border-bottom: 1px solid #999;
-    color: #333;
+    border-bottom: 1px solid black;
+    color: black;
     font-size: 16px;
     text-align: center;
+    width: 80%;
 }
 
 ::placeholder {
@@ -60,7 +63,7 @@ h1 {
 
 form button {
     background: #b43e69;
-    color: #fff;
+    color: white;
     border-radius: 4px;
     padding: 10px 40px;
     margin: 10px auto 10px;
@@ -78,7 +81,6 @@ form button {
     top: 28px;
     right: 10px;
 }
-
 
 /* Permite eliminar las flechas del input tipo number */
 /* Chrome, Safari, Edge, Opera */
