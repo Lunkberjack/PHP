@@ -52,8 +52,8 @@ function validarNombre() {
 function validarPass() {
     // Mensajes que aparecerán en el span según
     // las condiciones que se cumplan o no
-    if (pass.value.length < 8 && pass.value.length > 0) {
-        errorPass.innerHTML = 'No menos de 8 caracteres'
+    if (pass.value.length < LONGITUD_PASS && pass.value.length > 0) {
+        errorPass.innerHTML = 'No menos de ' + LONGITUD_PASS + ' caracteres'
         cambiarColorBorde(pass, 'rojo')
         return false
     } else if (pass.value.length == 0) {
@@ -163,6 +163,8 @@ btnReset.addEventListener("click", resetear);
  * específica de las entradas
  */
 function validarGeneral() {
+    // Los tres = significan que tanto el valor como el tipo del dato
+    // deben ser iguales, a diferencia del == 
     if(validarNombre() === true && validarPass() === true && validarEmail() === true
         && validarEdad() === true && validarTelefono() === true) {
         btnEnviar.disabled = false
