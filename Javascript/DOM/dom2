@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <script>
+    /* Document Object Model, o DOM, representa todo el contenido de la página como 
+    objetos que pueden ser modificados. El objeto document es el punto de entrada a 
+    la página. Con él podemos cambiar o crear cualquier cosa en la página
+    */
+
+    // cambiar el color de fondo a rojo
+    document.body.style.background = "red";
+
+    // deshacer el cambio después de 3 segundos
+    setTimeout(() => document.body.style.background = "", 3000);
+  </script>
+</body>
+
+</html>

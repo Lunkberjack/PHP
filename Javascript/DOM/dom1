@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<body onload="window.alert('Bienvenido!!!');">
+
+  <script>
+    function sayHi() {
+        alert("Hola");
+    }
+    //Hay un objeto “raíz” llamado window. Tiene dos roles:
+    // - Primero, es un objeto global para el código JavaScript
+    // - Segundo, representa la “ventana del navegador” y proporciona métodos 
+    //para controlarla.
+    
+    // Las funciones globales son métodos del objeto global:
+    window.sayHi();
+
+    alert(window.innerHeight); // altura interior de la ventana
+  </script>
+</body>
+
+</html>

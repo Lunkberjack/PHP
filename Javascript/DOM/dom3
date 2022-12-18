@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <script>
+    /* El Modelo de Objetos del Navegador (Browser Object Model, BOM) son objetos adicionales 
+    proporcionados por el navegador (entorno host) para trabajar con todo excepto el documento.
+    */
+
+    /*
+    El objeto navigator proporciona información sobre el navegador y el sistema operativo. 
+    Hay muchas propiedades, pero las dos más conocidas son: navigator.userAgent: acerca del 
+    navegador actual, y navigator.platform: acerca de la plataforma (ayuda a distinguir 
+    Windows/Linux/Mac, etc.).
+    
+    El objeto location nos permite leer la URL actual y puede redirigir el navegador a 
+    una nueva.*/
+
+    alert(location.href); // muestra la URL actual
+    if (confirm("Ir a wikipedia?")) {
+        location.href = "https://wikipedia.org"; // redirigir el navegador a otra URL
+    }
+  </script>
+</body>
+
+</html>

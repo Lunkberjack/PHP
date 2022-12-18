@@ -5,6 +5,8 @@ const pass = document.getElementById('pass')
 const email = document.getElementById('email')
 const edad = document.getElementById('edad')
 const telefono = document.getElementById('telefono')
+// Array con todas las entradas anteriores
+let inputs = document.querySelectorAll('.entrada');
 
 // Spans de error
 const errorNombre = document.getElementById('error-nombre')
@@ -12,10 +14,13 @@ const errorPass = document.getElementById('error-pass')
 const errorEmail = document.getElementById('error-email')
 const errorEdad = document.getElementById('error-edad')
 const errorTelefono = document.getElementById('error-telefono')
+// Array con todos los spans de error
+let spansError = document.querySelectorAll('.span-error');
 
 // Botones
 const btnReset = document.getElementById('btn-reset')
 const btnEnviar = document.getElementById('btn-enviar')
+btnEnviar.disabled = true // Desactivado por defecto
 
 // Constantes
 const LONGITUD_PASS = 8 // Longitud mínima de contraseña
@@ -33,9 +38,11 @@ function validarNombre() {
     if (nombre.value.length == 0) {
         errorNombre.innerHTML = 'El nombre es obligatorio'
         cambiarColorBorde(nombre, 'rojo')
+        return false
     } else {
         errorNombre.innerHTML = ''
         cambiarColorBorde(nombre)
+        return true
     }
 }
 
@@ -48,12 +55,15 @@ function validarPass() {
     if (pass.value.length < 8 && pass.value.length > 0) {
         errorPass.innerHTML = 'No menos de 8 caracteres'
         cambiarColorBorde(pass, 'rojo')
+        return false
     } else if (pass.value.length == 0) {
         errorPass.innerHTML = 'La contraseña es obligatoria'
         cambiarColorBorde(pass, 'rojo')
+        return false
     } else {
         errorPass.innerHTML = ''
         cambiarColorBorde(pass)
+        return true
     }
 }
 
@@ -65,12 +75,15 @@ function validarEmail() {
     if (email.value.length == 0) {
         errorEmail.innerHTML = 'El email es obligatorio'
         cambiarColorBorde(email, 'rojo')
+        return false
     } else if (!email.value.match(REGEX_EMAIL)) {
         errorEmail.innerHTML = 'Introduce un email válido'
         cambiarColorBorde(email, 'rojo')
+        return false
     } else {
         errorEmail.innerHTML = ''
         cambiarColorBorde(email)
+        return true
     }
 }
 
@@ -83,12 +96,15 @@ function validarEdad() {
     if (!Number.isInteger(parseInt(edad.value))) {
         errorEdad.innerHTML = 'Introduce solo números'
         cambiarColorBorde(edad, 'rojo')
+        return false
     } else if (parseInt(edad.value) <= 0 || parseInt(edad.value) > 130) {
         errorEdad.innerHTML = 'Esa edad no está en el rango'
         cambiarColorBorde(edad, 'rojo')
+        return false
     } else {
         errorEdad.innerHTML = ''
         cambiarColorBorde(edad)
+        return true
     }
 }
 
@@ -99,9 +115,11 @@ function validarTelefono() {
     if (Number.isInteger(parseInt(telefono.value)) && telefono.value.length == TEL_DIGS) {
         errorTelefono.innerHTML = ''
         cambiarColorBorde(telefono)
+        return true
     } else {
         errorTelefono.innerHTML = 'Introduce un teléfono válido'
         cambiarColorBorde(telefono, 'rojo')
+        return false
     }
 }
 
@@ -116,11 +134,11 @@ function cambiarColorBorde(cosa, color) {
     switch (color) {
         case 'rojo':
             cosa.setAttribute('style', 'border-bottom:1px solid #b43e69')
-            break;
+            break
 
         default:
             cosa.setAttribute('style', 'border-bottom:1px solid black')
-            break;
+            break
     }
 }
 
@@ -128,19 +146,30 @@ function cambiarColorBorde(cosa, color) {
  * Botón de reseteo: borra la información de todos los campos.
  */
 function resetear() {
-    nombre.value = ''
-    pass.value = ''
-    email.value = ''
-    edad.value = ''
-    telefono.value = ''
-    // También borra cualquier mensaje de error anterior
-    errorNombre.innerHTML = ''
-    errorPass.innerHTML = ''
-    errorEmail.innerHTML = ''
-    errorEdad.innerHTML = ''
-    errorTelefono.innerHTML = ''
+    inputs.forEach(element => {
+        element.value = ''
+        cambiarColorBorde(element);
+    });
+
+    spansError.forEach(element => {
+        element.innerHTML = ''
+    });
 };
 btnReset.addEventListener("click", resetear);
+
+/**
+ * Valida todas las condiciones y activa el botón de Enviar si
+ * la validación es correcta. Se ejecuta siempre tras cada validación
+ * específica de las entradas
+ */
+function validarGeneral() {
+    if(validarNombre() === true && validarPass() === true && validarEmail() === true
+        && validarEdad() === true && validarTelefono() === true) {
+        btnEnviar.disabled = false
+    } else {
+        btnEnviar.disabled = true
+    }
+}
 
 // TODO: hacer que el borde sea verde y aparezca un icono con un tick
 //       cuando los datos tengan el formato correcto para enviar

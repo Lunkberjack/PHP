@@ -1,0 +1,58 @@
+<!--
+RECORRIENDO EL DOM: SELECTORES
+- querySelectorAll (selector CSS)
+- querySelector (selector CSS)
+- getElementById (selector de id)
+- getElementsByName (selector por nombre): array de elementos
+- getElementsByTagName (selector por etiqueta o *): array de elementos
+- getElementsByClassName (selector de clases de estilo): array de elementos
+Hay 6 métodos principales para buscar nodos en el DOM:
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Titulo de la web| Menos de 55 caracteres</title>
+<meta charset="utf-8" />
+<meta name="description" content="Debe contener las palabras clave, tratar de atraer clicks y de longitud entre 150 y 160 caracteres">
+</head>
+ 
+<body>
+    <div id="elemento" style="color: red;">
+        <div id="elemento-contenido">Elemento</div>
+    </div>
+
+    <ul id="lista1">
+        <li>La</li>
+        <li>prueba</li>
+    </ul>
+    <ul id="lista2">
+        <li>ha</li>
+        <li>terminado</li>
+    </ul>
+
+    <script>
+        //obtener el elemento
+        //let elem = document.getElementById('elemento');
+        //cambiar el fondo a color rojo
+
+        //si se define una variable con el nombre de un objeto del DOM
+        //se modifica su tipo al tipo de la variable
+        //let elemento = 5;
+        //alert(elemento);
+        //elem.style.background="green";
+        
+        //seleccionar múltiples elementos del DOM
+        //let elements = document.querySelectorAll('ul > li:last-child');
+        //for(let elemento of elements){
+            //alert(elemento.innerHTML); // "prueba" y "terminado"
+        //}
+        
+        //obtener todos los estilos
+        //let elementsCss = document.querySelectorAll('css');
+        //alert(elementsCss[0]);
+
+        let tags = document.getElementsByTagName("ul");
+        alert(tags[0].id);
+    </script>    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--
+RECORRIENDO ELEMENTOS DEL DOM
+Para poder trabajar con los elementos del DOM
+tenemos que acceder a ellos. Todas las operaciones
+comienzan con la obtención de la referencia al elemento
+del DOM, comenzando por el objeto 'document'.
+Los tres principales elementos del DOM son:
+<html> = document.documentElement
+<body> = document.body
+<head> = document.head
+A continuación se muestra un ejemplo de valor nulo en el
+elemento body del DOM,  el navegador todavía no lo ha 
+leído cuando es consultado 
+-->
+<html>
+
+<head>
+  <script>
+    alert( "From HEAD: " + document.body ); // null, no hay  <body> aún
+  </script>
+</head>
+
+<body>
+  <script>
+    alert( "From BODY: " + document.body ); // HTMLBodyElement, ahora existe
+  </script>
+</body>
+</html>

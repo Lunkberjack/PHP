@@ -1,0 +1,69 @@
+<!-- 
+RECORRIENDO ELEMENTOS DEL DOM    
+    - childNodes: nodos hijos son todos desde un nodo dado
+    - firstChild: primer nodo hijo
+    - lastChild: último nodo hijo
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div>Begin</div>
+    <ul>
+    <li>Information</li>
+    <li>Exit</li>
+    </ul>
+    <div>End</div>
+
+    <script>
+        /*Nodos hijos (childNodes) – elementos que son hijos directos, es decir 
+        sus descendientes inmediatos. Por ejemplo, <head> y <body> son hijos del elemento <html>.
+        Descendientes – todos los elementos anidados de un elemento dado, incluyendo 
+        los hijos, sus hijos y así sucesivamente.
+        */
+
+        //La colección childNodes enumera todos los nodos hijos, 
+        //incluidos los nodos de texto.
+        /*    
+        for (let i = 0; i < document.body.childNodes.length; i++) {
+            alert( document.body.childNodes[i] ); 
+            // Texto, DIV, Texto, UL, ..., SCRIPT
+        }
+        
+        //Las propiedades firstChild y lastChild dan acceso rápido al primer y al último hijo.
+        alert(document.body.childNodes[0] === document.body.firstChild);
+        alert(document.body.childNodes[document.body.childNodes.length - 1]
+            === document.body.lastChild);
+        
+        
+        // muestra todos los nodos de la colección
+        for (let node of document.body.childNodes)
+            alert(node); 
+        
+        //nodos hermanos y nodo padre
+        // el padre de <body> es <html>
+        alert( document.body.parentNode === document.documentElement ); // verdadero
+        
+      
+        // después de <head> va <body>
+        alert( document.head.nextSibling ); // HTMLBodyElement
+        
+        // antes de <body> va <head>
+        alert( document.body.previousSibling ); // HTMLHeadElement
+        
+        //El padre de todos
+        alert( document.documentElement.parentNode ); // documento
+        */
+        //recorrer los elementos del DOM de abajo hacia arriba
+       
+        elem = document.body.parentElement; // sube hasta <html>            
+        alert( elem );            
+                
+    </script>
+</body>
+
+</html>

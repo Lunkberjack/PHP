@@ -17,33 +17,33 @@
             <h1>Regístrate</h1>
             <div class="input-group">
                 <label for="nombre">Nombre: </label>
-                <input id="nombre" type="text" placeholder="Tu nombre..." name="nombre" onkeyup="validarNombre()">
-                <span id="error-nombre"></span>
+                <input class="entrada" id="nombre" type="text" placeholder="Tu nombre..." name="nombre" onkeyup="validarNombre();validarGeneral();">
+                <span class="span-error" id="error-nombre"></span>
             </div>
 
             <div class="input-group">
                 <label for="pass">Contraseña: </label>
-                <input id="pass" type="password" placeholder="Tu contraseña..." name="pass" onkeyup="validarPass()">
-                <span id="error-pass"></span>
+                <input class="entrada" id="pass" type="password" placeholder="Tu contraseña..." name="pass" onkeyup="validarPass();validarGeneral();">
+                <span class="span-error" id="error-pass"></span>
             </div>
 
             <div class="input-group">
                 <label for="email">Email: </label>
-                <input id="email" type="email" placeholder="Tu email..." name="email" onkeyup="validarEmail()">
-                <span id="error-email"></span>
+                <input class="entrada" id="email" type="email" placeholder="Tu email..." name="email" onkeyup="validarEmail();validarGeneral();">
+                <span class="span-error" id="error-email"></span>
             </div>
 
             <div class="input-group">
                 <label for="edad">Edad: </label>
-                <input id="edad" type="number" placeholder="Introduce tu edad" name="edad" onkeyup="validarEdad()">
-                <span id="error-edad"></span>
+                <input class="entrada" id="edad" type="number" placeholder="Introduce tu edad" name="edad" onkeyup="validarEdad();validarGeneral();">
+                <span class="span-error" id="error-edad"></span>
             </div>
 
             <div class="input-group">
                 <label for="telefono">Teléfono: </label>
-                <input id="telefono" type="tel" placeholder="Introduce tu teléfono" name="telefono"
-                    onkeyup="validarTelefono()">
-                <span id="error-telefono"></span>
+                <input class="entrada" id="telefono" type="tel" placeholder="Introduce tu teléfono" name="telefono"
+                    onkeyup="validarTelefono();validarGeneral();">
+                <span class="span-error" id="error-telefono"></span>
             </div>
             <!--Los botones en Javascript tienen asociado un evento submit (enviar).
             Para evitar que el botón de reseteo envíe el formulario, le damos
